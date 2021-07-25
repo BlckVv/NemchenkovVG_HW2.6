@@ -14,16 +14,10 @@ protocol SettingsViewControllerDelegate {
 class RGBViewController: UIViewController {
     
     @IBOutlet var rgbViewVC: UIView!
-        
-//   хз надо или нет var rgbVCColor = UIColor.black
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.delegate = self
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
 

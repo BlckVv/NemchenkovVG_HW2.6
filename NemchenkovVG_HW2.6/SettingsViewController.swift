@@ -26,27 +26,23 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var settingsRGBView: UIView!
-    
+            
     var delegate: SettingsViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        redStateTextField.text = String(redSlider.value)
-        //        greenStateTextField.text = String(greenSlider.value)
-        //        blueStateTextField.text = String(blueSlider.value)
-        
         redStateLabel.text = String(format: "%.2f", redSlider.value)
         greenStateLabel.text = String(format: "%.2f", greenSlider.value)
         blueStateLabel.text = String(format: "%.2f", blueSlider.value)
         
-        //        redStateTextField.text = String(format: "%.2f", redSlider.value)
-        //        greenStateTextField.text = String(format: "%.2f", greenSlider.value)
-        //        blueStateTextField.text = String(format: "%.2f", blueSlider.value)
+        redStateTextField.text = String(format: "%.2f", redSlider.value)
+        greenStateTextField.text = String(format: "%.2f", greenSlider.value)
+        blueStateTextField.text = String(format: "%.2f", blueSlider.value)
         
         setColor()
         setValue(for: redStateLabel, greenStateLabel,blueStateLabel)
-        
+                
     }
     
     
@@ -60,14 +56,14 @@ class SettingsViewController: UIViewController {
         default: setValue(for: blueStateLabel)
         }
         
-        //        redStateTextField.text = String(round(100 * redSlider.value) / 100)
-        //        greenStateTextField.text = String(round(100 * greenSlider.value) / 100)
-        //        blueStateTextField.text = String(round(100 * blueSlider.value) / 100)
+        redStateTextField.text = string(from: redSlider)
+        greenStateTextField.text = string(from: greenSlider)
+        blueStateTextField.text = string(from: blueSlider)
         
     }
     
     @IBAction func doneButtonPressed() {
-        delegate.setNewColor(for: settingsRGBView.backgroundColor ?? UIColor.clear)
+        delegate.setNewColor(for: settingsRGBView.backgroundColor ?? .clear)
         dismiss(animated: true)
     }
     
