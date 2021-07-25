@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var redStateLabel: UILabel!
@@ -23,23 +25,24 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var doneButton: UIButton!
     
-    @IBOutlet weak var rgbView: UIView!
+    @IBOutlet weak var settingsRGBView: UIView!
     
+    var delegate: SettingsViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        redStateTextField.text = String(redSlider.value)
-//        greenStateTextField.text = String(greenSlider.value)
-//        blueStateTextField.text = String(blueSlider.value)
+        //        redStateTextField.text = String(redSlider.value)
+        //        greenStateTextField.text = String(greenSlider.value)
+        //        blueStateTextField.text = String(blueSlider.value)
         
         redStateLabel.text = String(format: "%.2f", redSlider.value)
         greenStateLabel.text = String(format: "%.2f", greenSlider.value)
         blueStateLabel.text = String(format: "%.2f", blueSlider.value)
         
-//        redStateTextField.text = String(format: "%.2f", redSlider.value)
-//        greenStateTextField.text = String(format: "%.2f", greenSlider.value)
-//        blueStateTextField.text = String(format: "%.2f", blueSlider.value)
+        //        redStateTextField.text = String(format: "%.2f", redSlider.value)
+        //        greenStateTextField.text = String(format: "%.2f", greenSlider.value)
+        //        blueStateTextField.text = String(format: "%.2f", blueSlider.value)
         
         setColor()
         setValue(for: redStateLabel, greenStateLabel,blueStateLabel)
@@ -57,21 +60,19 @@ class SettingsViewController: UIViewController {
         default: setValue(for: blueStateLabel)
         }
         
-//        redStateLabel.text = String(round(100 * redSlider.value) / 100)
-//        greenStateLabel.text = String(round(100 * greenSlider.value) / 100)
-//        blueStateLabel.text = String(round(100 * blueSlider.value) / 100)
+        //        redStateTextField.text = String(round(100 * redSlider.value) / 100)
+        //        greenStateTextField.text = String(round(100 * greenSlider.value) / 100)
+        //        blueStateTextField.text = String(round(100 * blueSlider.value) / 100)
         
-//        redStateTextField.text = String(round(100 * redSlider.value) / 100)
-//        greenStateTextField.text = String(round(100 * greenSlider.value) / 100)
-//        blueStateTextField.text = String(round(100 * blueSlider.value) / 100)
-
-        }
-        
+    }
+    
     @IBAction func doneButtonPressed() {
+        delegate.setNewColor(for: settingsRGBView.backgroundColor ?? UIColor.clear)
+        dismiss(animated: true)
     }
     
     private func setColor() {
-        rgbView.backgroundColor = UIColor(
+        settingsRGBView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),

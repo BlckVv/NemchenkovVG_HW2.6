@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5M1-8m-GAB">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -31,8 +31,7 @@
                                 <rect key="frame" x="50" y="488" width="220" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="9od-Zb-pDy"/>
-                                    <action selector="doneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6He-rK-lmG"/>
+                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzm-vh-2Rp"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="zJs-iZ-UcB">
@@ -172,7 +171,7 @@
                         <outlet property="redSlider" destination="Wxe-QN-Y07" id="8yc-Fd-Bzd"/>
                         <outlet property="redStateLabel" destination="CUK-9D-XGv" id="c9u-f8-sCN"/>
                         <outlet property="redStateTextField" destination="f7r-ec-Nki" id="oor-lO-oIw"/>
-                        <outlet property="rgbView" destination="zXT-ho-8U3" id="R4i-yr-jbT"/>
+                        <outlet property="settingsRGBView" destination="zXT-ho-8U3" id="R4i-yr-jbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

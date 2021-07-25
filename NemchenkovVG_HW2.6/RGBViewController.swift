@@ -7,18 +7,29 @@
 
 import UIKit
 
+protocol SettingsViewControllerDelegate {
+    func setNewColor(for rgbView: UIColor)
+}
+
 class RGBViewController: UIViewController {
     
     @IBOutlet var rgbViewVC: UIView!
-    
+        
 //   хз надо или нет var rgbVCColor = UIColor.black
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let settingsVC = segue.destination as? SettingsViewController else { return }
+        settingsVC.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let rgbVC = segue.destination as? SettingsViewController else { return }
-//        rgbVC.rgbView.backgroundColor = rgbVCColor или rgbViewVC
+}
+
+extension RGBViewController: SettingsViewControllerDelegate {
+    func setNewColor(for rgbView: UIColor) {
+        rgbViewVC.backgroundColor = rgbView
     }
 }
+    
